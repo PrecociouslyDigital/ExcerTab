@@ -11,7 +11,7 @@ var things= document.getElementById("things");
 var transact = document.getElementById("trans");
 var transactions = [];
 for(var item in localStorage){
-things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add";
+things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add <br>";
 }
 
 function addthing(){
@@ -25,7 +25,7 @@ transactions.push(ite);
 }
 function clear(){
 transact.innerHTML ="";
-transactions = "";
+transactions = [];
 }
 function takeTransact(){
   for(var i =0; i < transactions.length; i++){
@@ -34,7 +34,7 @@ function takeTransact(){
   transact.innerHTML = "";
   things.innerHTML = "";
   for(var item in localStorage){
-things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add";
+things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add <br>";
 }
 }
 </script>
