@@ -28,8 +28,8 @@ transact.innerHTML ="";
 transactions = "";
 }
 function takeTransact(){
-  for(var i in transactions){
-    localStorage[i]++;
+  for(var i =0; i < transactions.length; i++){
+    localStorage[transactions[i]]++;
   }
   transact.innerHTML = "";
 }
