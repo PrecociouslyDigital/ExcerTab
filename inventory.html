@@ -1,0 +1,22 @@
+<html>
+<body>
+<div id=things></div>
+<input type=text id=thing><span onclick=addthing();> add</span>
+<script>
+var inp= document.getElementById("thing");
+var things= document.getElementById("things");
+for(var item in localStorage){
+things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'>add</span><br>";
+}
+
+function addthing(){
+things.innerHTML +=  "<span id='item_"+inp.value +"'>" +inp.value + ":0'</span><span onclick=\"addvalue('"+inp.value+ "');\"> add</span><br>";
+localStorage[inp.value] = 0;
+inp.value="";
+}
+function addvalue(ite){
+document.getElementById("item_" + ite).innerHTML = ite + ":" + ++localStorage[ite];
+}
+</script>
+</body>
+</html>
