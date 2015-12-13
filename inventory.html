@@ -6,11 +6,11 @@
 var inp= document.getElementById("thing");
 var things= document.getElementById("things");
 for(var item in localStorage){
-things.innerHTML +=  "<span onclick='subtractvalue(\""+item+ "\");'>minus</span><span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'>add</span><input id=inp_" + item + "><span onclick='setvalue(\""+item+ "\");'>set</span> <br>";
+things.innerHTML +=  "<span onclick='subtractvalue(\""+item+ "\");'> minus | </span><span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add | </span><input id=inp_" + item + "><span onclick='setvalue(\""+item+ "\");'>set</span> <br>";
 }
 
 function addthing(){
-things.innerHTML +=  "<span onclick=\"subtractvalue('"+inp.value+ "');\"> minus</span><span id='item_"+inp.value +"'>" +inp.value + ":0'</span><span onclick=\"addvalue('"+inp.value+ "');\"> add</span><br><input id=inp_" + item + "><span onclick='setvalue(\""+item+ "\");'>set</span>";
+things.innerHTML +=  "<span onclick=\"subtractvalue('"+inp.value+ "');\"> minus | </span><span id='item_"+inp.value +"'>" +inp.value + ":0'</span><span onclick=\"addvalue('"+inp.value+ "');\">  | add |</span><br><input id=inp_" + item + "><span onclick='setvalue(\""+item+ "\");'>set</span>";
 localStorage[inp.value] = 0;
 inp.value="";
 }
