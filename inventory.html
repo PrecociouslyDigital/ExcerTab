@@ -3,7 +3,7 @@
 <div id=things></div>
 <input type=text id=thing><span onclick=addthing();> add</span>
 <div id=trans></div>
-<div onclick=transact()></div>
+<div onclick=transact()>heeeey</div>
 <script>
 var inp= document.getElementById("thing");
 var things= document.getElementById("things");
@@ -26,8 +26,8 @@ function subtractvalue(ite){
 transact.innerHTML -= ite + "<br>";
 transactions.push(ite);
 }
-function transact(ite){
-  for(var i in ite){
+function transact(){
+  for(var i in transactions){
     locateStorage[ite]++;
   }
   transact.innerHTML = "";
