@@ -32,6 +32,10 @@ function takeTransact(){
     localStorage[transactions[i]]++;
   }
   transact.innerHTML = "";
+  things.innerHTML = "";
+  for(var item in localStorage){
+things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add";
+}
 }
 </script>
 </body>
