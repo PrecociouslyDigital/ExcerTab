@@ -3,18 +3,19 @@
 <div id=things></div>
 <input type=text id=thing><span onclick=addthing();> add</span>
 <div id=trans></div>
-<div onclick=takeTransact()>heeeey</div>
+<div onclick=takeTransact()>process</div>
+<div onclick=clear()>clear</div>
 <script>
 var inp= document.getElementById("thing");
 var things= document.getElementById("things");
 var transact = document.getElementById("trans");
 var transactions = [];
 for(var item in localStorage){
-things.innerHTML +=  "<span onclick='subtractvalue(\""+item+ "\");'> minus | </span><span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add | </span><input id=inp_" + item + "> <br>";
+things.innerHTML +=  "<span id='item_"+item +"'>" +item + ":" + localStorage[item]+ "'</span><span onclick='addvalue(\""+item+ "\");'> | add";
 }
 
 function addthing(){
-things.innerHTML +=  "<span onclick=\"subtractvalue('"+inp.value+ "');\"> minus | </span><span id='item_"+inp.value +"'>" +inp.value + ":0'</span><span onclick=\"addvalue('"+inp.value+ "');\">  | add |</span><br><input id=inp_" + item + "></span>";
+things.innerHTML +=  "<span id='item_"+inp.value +"'>" +inp.value + ":0'</span><span onclick=\"addvalue('"+inp.value+ "');\">  | add ";
 localStorage[inp.value] = 0;
 inp.value="";
 }
@@ -22,9 +23,9 @@ function addvalue(ite){
 transact.innerHTML += ite + "<br>";
 transactions.push(ite);
 }
-function subtractvalue(ite){
-transact.innerHTML -= ite + "<br>";
-transactions.push(ite);
+function clear(){
+transact.innerHTML =";
+transactions = "";
 }
 function takeTransact(){
   for(var i in transactions){
